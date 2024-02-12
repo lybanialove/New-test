@@ -1,0 +1,100 @@
+﻿@page "/tasks"
+@using TestProject.Shared
+@using TestProject.Shared.Entitys;
+@inject HttpClient Http
+<h1>Tasks</h1>
+<div class="row">
+    <div class="col-md-6">
+        <a href='/tasks/add' class="btn btn-primary" role="button">
+            <i class="fas fa-user-plus"></i>
+            Add Task
+        </a>
+    </div>
+    <div class="input-group col">
+        <input type="text" class="form-control" placeholder="Search user by name"
+        @bind="SearchString" @bind:event="oninput" @onkeyup="FilterUser" />
+        @if (SearchString.Length > 0)
+        {
+            <div class="input-group-append">
+                <button class="btn btn-danger" @onclick="ResetSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        }
+    </div>
+</div>
+<br />
+@if (TaskList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-striped align-middle table-bordered">
+        <thead class="table-success">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Status_Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in TaskList)
+            {
+                <tr>
+                    <td>@task.id</td>
+                    <td>@task.name</td>
+                    <td>@task.description</td>
+                    <td>@task.status_id</td>
+                    <td>
+                        <a href='/tasks/edit/@task.id' class="btn btn-outline-dark" role="button">
+                            Edit
+                        </a>
+                        <a href='/tasks/delete/@task.id' class="btn btn-outline-danger" role="button">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+}
+@code {
+    protected List<Task_> TaskList = new();
+    protected List<Task_> searchTasks = new();
+    protected Task_ task = new();
+    protected string SearchString { get; set; } = string.Empty;
+    protected override async Task OnInitializedAsync()
+    {
+        await GetUser();
+    }
+    protected async Task GetUser()
+    {
+        TaskList = await Http.GetFromJsonAsync<List<Task_>>("api/Task");
+        searchTasks = TaskList;
+    }
+    protected void FilterUser()
+    {
+        if (!string.IsNullOrEmpty(SearchString))
+        {
+            TaskList = searchTasks
+                .Where(x => x.name.IndexOf(SearchString, StringComparison.OrdinalIgnoreCase) != -1)
+                .ToList();
+        }
+        else
+        {
+            TaskList = searchTasks;
+        }
+    }
+    protected void DeleteConfirm(int iD)
+    {
+        task = TaskList.FirstOrDefault(x => x.id == iD);
+    }
+    public void ResetSearch()
+    {
+        SearchString = string.Empty;
+        TaskList = searchTasks;
+    }
+}

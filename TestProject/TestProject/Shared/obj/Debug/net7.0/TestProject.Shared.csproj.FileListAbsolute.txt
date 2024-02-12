@@ -1,0 +1,14 @@
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\bin\Debug\net7.0\TestProject.Shared.deps.json
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\bin\Debug\net7.0\TestProject.Shared.runtimeconfig.json
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\bin\Debug\net7.0\TestProject.Shared.dll
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\bin\Debug\net7.0\TestProject.Shared.pdb
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\obj\Debug\net7.0\TestProject.Shared.csproj.AssemblyReference.cache
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\obj\Debug\net7.0\TestProject.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\obj\Debug\net7.0\TestProject.Shared.AssemblyInfoInputs.cache
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\obj\Debug\net7.0\TestProject.Shared.AssemblyInfo.cs
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\obj\Debug\net7.0\TestProject.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\obj\Debug\net7.0\TestProject.Shared.dll
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\obj\Debug\net7.0\refint\TestProject.Shared.dll
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\obj\Debug\net7.0\TestProject.Shared.pdb
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\obj\Debug\net7.0\TestProject.Shared.genruntimeconfig.cache
+C:\Users\Валан\Desktop\test new\TestProject\TestProject\Shared\obj\Debug\net7.0\ref\TestProject.Shared.dll
