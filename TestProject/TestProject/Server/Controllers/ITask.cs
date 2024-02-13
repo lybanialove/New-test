@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
 using TestProject.Client.Pages;
 using TestProject.Shared.Database;
 using TestProject.Shared.Entitys;
@@ -35,11 +35,11 @@ namespace TestProject.Server.Controllers
                 throw;
             }
         }
-        public void UpdateUserDetails(Tasks task)
+        public void UpdateTaskDetails(Task_ task)
         {
             try
             {
-                _dbContext.Update(task);
+                _dbContext.Entry(task).State = EntityState.Modified;
                 _dbContext.SaveChanges();
             }
             catch

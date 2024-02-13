@@ -68,9 +68,9 @@ else
     protected string SearchString { get; set; } = string.Empty;
     protected override async Task OnInitializedAsync()
     {
-        await GetUser();
+        await GetTask();
     }
-    protected async Task GetUser()
+    protected async Task GetTask()
     {
         TaskList = await Http.GetFromJsonAsync<List<Task_>>("api/Task");
         searchTasks = TaskList;

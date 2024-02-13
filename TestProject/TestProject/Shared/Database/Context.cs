@@ -7,13 +7,14 @@ namespace TestProject.Shared.Database
     {
         public DbSet<Status> Statuses { get; set; }
         public DbSet<Task_> Tasks { get; set; }
-        public Context(DbContextOptions<Context> options) : base(options)
+        public Context(DbContextOptions<Context> options)
+            : base(options)
         {
             Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
+           
         }
     }
 }
